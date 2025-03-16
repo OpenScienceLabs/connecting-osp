@@ -1,1 +1,11 @@
 /* css styles */
+
+
+.card-img-top {
+    object-fit: contain;
+    border-radius: 5px 5px 0 0;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    padding: 5px;
+}

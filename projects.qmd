@@ -3,11 +3,49 @@ title: "Projects and Communities"
 ---
 
 ```{python}
+#| echo: false
+#| warning: false
+#| message: false
+
 import pandas as pd
+from IPython.display import HTML
 
-projects = pd.read_csv("data/projects.csv")
+projects_df = pd.read_csv("data/projects.csv")
 
-print(projects.to_markdown(index=False))
+cards_html = ""
+group_html = ""
+group_count = 0
+for index, row in projects_df.iterrows():
+    card = f"""
+        <div class="card">
+            <div class="card-header">
+                Project {index:04d}
+            </div>
+            <img src="{row['image_url']}" class="card-img-top" alt="{row['name']}">
+            <div class="card-body">
+                <h5 class="card-title">{row['name']}</h5>
+                <p class="card-text">{row['description']}</p>
+                <a href="{row['project_url']}" class="btn btn-primary">View Project</a>
+            </div>
+        </div>
+    """
+    group_html += card
+    group_count += 1
 
-projects_json = projects.to_json(orient="records")
+    if group_count == 3:
+        cards_html += f"""
+        <div class="card-group">
+            {group_html}
+        </div>
+        """
+        group_html = ""
+        group_count = 0
+
+cards_html = f"""
+<div class="container">
+    {cards_html}
+</div>
+"""
+
+HTML(cards_html)
 ```
