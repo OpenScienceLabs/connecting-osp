@@ -1,0 +1,13 @@
+---
+title: "Projects and Communities"
+---
+
+```{python}
+import pandas as pd
+
+projects = pd.read_csv("data/projects.csv")
+
+print(projects.to_markdown(index=False))
+
+projects_json = projects.to_json(orient="records")
+```
