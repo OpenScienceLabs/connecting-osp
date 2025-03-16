@@ -40,6 +40,12 @@ for index, row in projects_df.iterrows():
         """
         group_html = ""
         group_count = 0
+else:
+    cards_html += f"""
+    <div class="card-group">
+        {group_html}
+    </div>
+    """
 
 cards_html = f"""
 <div class="container">

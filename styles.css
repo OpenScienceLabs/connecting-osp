@@ -1,5 +1,8 @@
 /* css styles */
 
+.card {
+    max-width: 300px;
+}
 
 .card-img-top {
     object-fit: contain;
