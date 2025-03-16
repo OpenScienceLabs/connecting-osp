@@ -1,0 +1,10 @@
+---
+title: "Connecting Open Science Projects"
+---
+
+```{python}
+import pandas as pd
+
+pd.read_csv('projects.csv')
+
+```

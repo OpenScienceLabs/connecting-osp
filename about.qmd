@@ -1,0 +1,6 @@
+---
+title: "About"
+---
+
+Connecting communities is a centralized platform with a searchable information and news feed could greatly improve the discoverability of the open source ecosystem. Projects could share key information such as goals, contributor needs, and progress updates, allowing developers and users to easily find and connect with relevant initiatives. This centralized hub would foster greater collaboration and improve visibility across the community.
+

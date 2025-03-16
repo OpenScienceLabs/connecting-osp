@@ -1,0 +1,13 @@
+[project]
+name = "connecting-open-science-projects"
+version = "0.1.0"
+description = "Connecting Open Science Projects"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "jupyterlab>=4.3.1",
+    "pandas>=2.2.3",
+    "pyarrow>=18.1.0",
+    "quarto-cli>=1.6.37",
+    "quarto>=0.1.0",
+]
