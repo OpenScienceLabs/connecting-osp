@@ -18,7 +18,7 @@ Current contributors seeking projects or collaborators, new contributors explori
 
 ### Prerequisites
 - Python 3.11 or higher
-- Quarto (for rendering the website) - https://quarto.org/docs/get-started/
+- Install `uv`
 
 ### Installation
 
