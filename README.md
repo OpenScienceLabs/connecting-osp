@@ -18,7 +18,6 @@ Current contributors seeking projects or collaborators, new contributors explori
 
 ### Prerequisites
 - Python 3.11 or higher
-- Install `uv`
 
 ### Installation
 
@@ -28,24 +27,17 @@ Current contributors seeking projects or collaborators, new contributors explori
    cd connecting-osp
    ```
 
-2. Create and activate a virtual environment:
+2. Create and activate a virtual environment using uv:
    ```
-   python -m venv venv
-   source venv/Scripts/activate  # On Windows with Git Bash
+   uv venv
+   source .venv/bin/activate  # On Unix or macOS
    # OR
-   venv\Scripts\activate  # On Windows with CMD
-   # OR
-   .\venv\Scripts\activate  # On Windows with PowerShell
+   .venv\Scripts\activate  # On Windows
    ```
 
-3. Install the required dependencies:
+3. Install the project dependencies:
    ```
-   pip install -r requirements.txt
-   ```
-   
-   Note: If you encounter any issues with PyYAML during the Quarto rendering process, make sure it's installed:
-   ```
-   pip install pyyaml
+   uv pip install -e .
    ```
 
 ### Running the Project
@@ -58,17 +50,7 @@ With the virtual environment activated:
 quarto preview
 ```
 
-If Quarto is not in your PATH, use the full path to the executable:
-
-```
-"C:/Program Files/Quarto/bin/quarto.exe" preview  # For default installation
-```
-
-Important notes:
-- Make sure your virtual environment is activated when running Quarto
-- Quarto will use the Python from your activated environment
-- The website will be available at http://localhost:7719/ (or similar port)
-- If you see an error about missing 'yaml' module, run `pip install pyyaml` in your activated environment
+The website will be available at http://localhost:7719/ (or similar port).
 
 #### Using Jupyter Lab (Alternative)
 
@@ -96,13 +78,15 @@ This will open a Jupyter Lab instance in your browser where you can explore and 
 
 ### Common Issues
 
-1. **"Module not found" errors**: Make sure your virtual environment is activated and all dependencies are installed.
+1. **"Module not found" errors**: Make sure your virtual environment is activated and dependencies are installed:
    ```
-   source venv/Scripts/activate  # On Git Bash
-   pip install -r requirements.txt
+   source .venv/bin/activate  # On Unix or macOS
+   # OR
+   .venv\Scripts\activate  # On Windows
+   uv pip install -e .
    ```
 
-2. **Quarto not found**: If running `quarto` commands results in "command not found", use the full path to the Quarto executable.
-
-3. **Missing Python modules during Quarto rendering**: Quarto needs to use the Python from your virtual environment. Make sure to run Quarto commands with your virtual environment activated.
-
+2. **Quarto not found**: The quarto-cli package should install Quarto automatically. If you have issues, try reinstalling the package:
+   ```
+   uv pip install --force-reinstall quarto-cli
+   ```
