@@ -83,7 +83,7 @@ This will open a Jupyter Lab instance in your browser where you can explore and 
    source .venv/bin/activate  # On Unix or macOS
    # OR
    .venv\Scripts\activate  # On Windows
-   uv pip install -e .
+   uv pip install -r pyproject.toml
    ```
 
 2. **Quarto not found**: The quarto-cli package should install Quarto automatically. If you have issues, try reinstalling the package:
