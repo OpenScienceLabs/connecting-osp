@@ -37,7 +37,7 @@ Current contributors seeking projects or collaborators, new contributors explori
 
 3. Install the project dependencies:
    ```
-   uv pip install -e .
+   uv pip install -r pyproject.toml
    ```
 
 ### Running the Project
